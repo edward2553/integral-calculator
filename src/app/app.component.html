@@ -17,29 +17,30 @@
             <div class="mt-3">
               <form>
                 <div class="form-group">
-                  <textarea rows="2" name="expresion"  placeholder="Escriba expresión"  id="" class="form-control"></textarea>
+                  <textarea rows="2" name="expresion"  placeholder="Escriba expresión" [(ngModel)]="expresionString.expression" id="" class="form-control">{{expresionString.expression}}</textarea>
                 </div>
                 <div class="form-group mt-5 margin">
                   <div class="row">
-                    <div class="col-sm col-md col-lg"><button class="btn btn-primary"><span>x^n</span></button></div>
-                    <div class="col-sm col-md col-lg"><button class="btn btn-primary"><span>&#8730;</span></button></div>
-                    <div class="col-sm col-md col-lg"><button class="btn btn-primary"><span>e</span></button></div>
-                    <div class="col-sm col-md col-lg"><button class="btn btn-primary"><span>Ln</span></button></div>
+                    <div class="col-sm col-md col-lg"><button class="btn btn-primary" (click)="addElement('^')" ><span>x^n</span></button></div>
+                    <div class="col-sm col-md col-lg"><button class="btn btn-primary" (click)="addElement('raiz')" ><span>&#8730;</span></button></div>
+                    <div class="col-sm col-md col-lg"><button class="btn btn-primary" (click)="addElement('e')" ><span>e</span></button></div>
+                    <div class="col-sm col-md col-lg"><button class="btn btn-primary" (click)="addElement('log')" ><span>Ln</span></button></div>
                   </div>
                   <div class="row mt-3">
-                    <div class="col-sm col-md col-lg"><button class="btn btn-primary"><span>&#8734;</span></button></div>
-                    <div class="col-sm col-md col-lg"><button class="btn btn-primary"><span>cos</span></button></div>
-                    <div class="col-sm col-md col-lg"><button class="btn btn-primary"><span>sen</span></button></div>
-                    <div class="col-sm col-md col-lg"><button class="btn btn-primary"><span>tan</span></button></div>
+                    <div class="col-sm col-md col-lg"><button class="btn btn-primary" (click)="addElement('infinity')" ><span>&#8734;</span></button></div>
+                    <div class="col-sm col-md col-lg"><button class="btn btn-primary" (click)="addElement('cos')" ><span>cos</span></button></div>
+                    <div class="col-sm col-md col-lg"><button class="btn btn-primary" (click)="addElement('sin')" ><span>sen</span></button></div>
+                    <div class="col-sm col-md col-lg"><button class="btn btn-primary" (click)="addElement('tan')" ><span>tan</span></button></div>
                   </div>
                   <div class="row mt-3">
-                    <div class="col-sm col-md col-lg"><button class="btn btn-primary"><span>+</span></button></div>
-                    <div class="col-sm col-md col-lg"><button class="btn btn-primary"><span>-</span></button></div>
-                    <div class="col-sm col-md col-lg"><button class="btn btn-primary"><span>*</span></button></div>
-                    <div class="col-sm col-md col-lg"><button class="btn btn-primary"><span>/</span></button></div>
+                    <div class="col-sm col-md col-lg"><button class="btn btn-primary" (click)="addElement('+')" ><span>+</span></button></div>
+                    <div class="col-sm col-md col-lg"><button class="btn btn-primary" (click)="addElement('-')" ><span>-</span></button></div>
+                    <div class="col-sm col-md col-lg"><button class="btn btn-primary" (click)="addElement('*')" ><span>*</span></button></div>
+                    <div class="col-sm col-md col-lg"><button class="btn btn-primary" (click)="addElement('/')" ><span>/</span></button></div>
                   </div>
                   <div class="row text-center mt-3">
-                    <div class="col-sm col-md col-lg"><button class="btn btn-primary"><span>=</span></button></div>
+                    <div class="col-sm col-md col-lg"><button class="btn btn-primary" (click)="addElement(' from x=0 to x=1')" ><span>lim</span></button></div>
+                    <div class="col-sm col-md col-lg"><button class="btn btn-primary" (click)="result()" ><span>=</span></button></div>
                   </div>
                 </div>
               </form>

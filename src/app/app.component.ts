@@ -15,6 +15,10 @@ export class AppComponent {
 
   }
 
+  result(){
+    console.log(this.expresionString.expression);
+  }
+
   // employeeArray: Employee[] = [
   //   {id: 1 , name: 'Edward' , country: 'Colombia'},
   //   {id: 2 , name: 'Claudia' , country: 'Venezuela'},
