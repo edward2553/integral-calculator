@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0px;
+    padding: 0%;
+}
+
+body{
+    background: rgb(52,153,255) !important;
+    background-image: linear-gradient(164deg, rgba(52,153,255,1) 0%, rgba(58,57,133,1) 100%) !important;
+    height: 100vh;
+}
+
+.wrapper {
+    position: relative;
+    top: 7rem;
+}
+
+.card {
+    width: 50vh;
+    height: 30rem;
+    margin: auto;
+}
+
+.btn {
+    width: 60px !important;
+}
