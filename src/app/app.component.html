@@ -17,7 +17,7 @@
             <div class="mt-3">
               <form>
                 <div class="form-group">
-                  <textarea rows="2" name="expresion"  placeholder="Escriba expresión" [(ngModel)]="expresionString.expression" id="" class="form-control">{{expresionString.expression}}</textarea>
+                  <textarea rows="4" name="expresion"  placeholder="Escriba expresión" [(ngModel)]="expresionString.expression" id="" class="form-control">{{expresionString.expression}}</textarea>
                 </div>
                 <div class="form-group mt-5 margin">
                   <div class="row">
@@ -44,6 +44,30 @@
                   </div>
                 </div>
               </form>
+            </div>
+            <!-- <div class="form-group">
+              <input type="text" name="nombre"  placeholder="Nombre del empleado"  id="" class="form-control" >
+            </div>
+            <div class="form-group">
+              <input type="text" name="pais"  placeholder="Pais del empleado" id="" class="form-control" >
+            </div>
+            <button (click)="addElement('cos')" class="btn btn-primary" >cos</button> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-sm col-md col-lg">
+        <div class="card shadow p-3 mb-5 bg-white rounded">
+          <div class="card-body">
+            <div class="card-title text-center">Solución</div>
+            <div class="mt-3">
+              <div class="form-group">
+                <label for="">Resultado</label>               
+                <textarea rows="4" name="expresion" readonly  placeholder="Escriba expresión" id="" class="form-control">{{response.plaintext}}</textarea>
+                <!-- <input type="text" name="nombre"  readonly  id="" class="form-control" > -->
+              </div>
+              <label for="">Imagen</label>
+              <br>
+              <img [src]="response.img" alt="">
             </div>
             <!-- <div class="form-group">
               <input type="text" name="nombre"  placeholder="Nombre del empleado"  id="" class="form-control" >

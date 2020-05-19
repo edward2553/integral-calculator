@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Expression } from './models/Expression';
+import { ApiCallsService } from './api-calls.service';
+import { ResponseFromApi } from './models/ResponseFromApi';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,6 +10,9 @@ import { Expression } from './models/Expression';
 export class AppComponent {
 
   expresionString : Expression  = new Expression();
+  response : ResponseFromApi = new ResponseFromApi();
+
+  constructor( private _apiCallService : ApiCallsService ) {}
 
   addElement( element : string ){
 
@@ -16,7 +21,18 @@ export class AppComponent {
   }
 
   result(){
-    console.log(this.expresionString.expression);
+    
+    if(this.expresionString.expression === ''){
+      this.response.plaintext = 'Expresion no valida'
+      this.response.img = '...'
+      return;
+    }
+     this._apiCallService.getResult(this.expresionString.expression).subscribe(
+      data =>{
+        this.response.img = data.queryresult.pods[0].subpods[0].img.src;
+        this.response.plaintext = data.queryresult.pods[0].subpods[0].plaintext;
+      });
+    
   }
 
   // employeeArray: Employee[] = [
